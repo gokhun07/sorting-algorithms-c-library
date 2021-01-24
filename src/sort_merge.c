@@ -1,3 +1,14 @@
+/**
+ * @file sort_merge.c
+ * @author ihsangokhun (onel.gokhun@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-01-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include "stdlib.h"
 #include "stdint.h"
 #include "stdio.h"
@@ -51,37 +62,8 @@ void sort_merge(void *arr, uint32_t len )
       }  
     }
     else
-    {
-        
+    {   
+        return; // ToDo 
     }
-    
 
-}
-
-int32_t  arr_G[] = {2,1,4,-49,8,6,28,-13,-48,11};
-
-int main(int argc, char const *argv[])
-{
-    
-
-    for (int i = 0; i < sizeof (arr_G) / sizeof(uint32_t); i++)
-    {
-        printf("%d", arr_G[i]);
-        printf(",");
-    }
-   
-    printf("\n\n\n");
-   
-    sort_merge(arr_G, sizeof (arr_G) / sizeof(uint32_t));  
-
-    for (int i = 0; i < sizeof (arr_G) / sizeof(uint32_t); i++)
-    {
-        printf("%d", arr_G[i]);
-        printf(",");
-
-    }
-    
-    printf("\n\n\n");
-
-    return 0;
 }

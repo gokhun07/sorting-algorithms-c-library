@@ -1,3 +1,13 @@
+/**
+ * @file sort_quick.c
+ * @author ihsangokhun (onel.gokhun@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-01-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include "stdlib.h"
 #include "stdio.h"
 #include "stdint.h"
@@ -63,40 +73,12 @@ void _quick_sort(int32_t *arr, uint32_t right, uint32_t left, uint8_t phase)
     else
     _quick_sort(arr, right, index,0 );
 
-    
-    
-
 }
+
 void quick_sort(int32_t *arr, uint32_t right, uint32_t left)
 {
     _quick_sort(arr,right,left, 1);
     _quick_sort(arr,right,first_piv,0);
     first_piv = -1;
 
-}
-
-//int32_t arr_t[] = {2,1,4,8,6,28,10,0,-10};
-
-int32_t arr_t[] = {1,4,8,0,6,2,13,5,7,78,778,41,2365};
-
-int main(int argc, char const *argv[])
-{
-
-   for (int32_t i = 0; i < sizeof(arr_t) / sizeof (int32_t); i++)
-    {
-        printf("%d, ", * (arr_t + i ));
-    }
-    
-    quick_sort(arr_t,   sizeof(arr_t) / sizeof (int32_t) - 1 ,0 );
-    
-    printf ("\n\n");
-
-   for (int32_t i = 0; i < sizeof(arr_t) / sizeof (int32_t); i++)
-    {
-        printf("%d, ", * (arr_t + i ));
-    }
-
-        printf ("\n\n");
-
-    return 0;
 }

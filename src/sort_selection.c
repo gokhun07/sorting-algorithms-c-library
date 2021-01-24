@@ -1,3 +1,13 @@
+/**
+ * @file sort_selection.c
+ * @author ihsangokhun (onel.gokhun@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-01-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include "stdlib.h"
 #include "stdio.h"
 #include "stdint.h"
@@ -33,29 +43,3 @@ void sort_selection(void *arr, uint32_t len)
 
 }
 
-int main(int argc, char const *argv[])
-{
-    
-    int32_t  arr[] = {-49,1,2,4,8,6,28,-13,-48,11,5};
-
-    for (int i = 0; i < sizeof (arr) / sizeof(uint32_t); i++)
-    {
-        printf("%d", arr[i]);
-        printf(",");
-    }
-   
-    printf("\n\n\n");
-   
-    sort_selection(arr, sizeof (arr) / sizeof(uint32_t));  
-
-    for (int i = 0; i < sizeof (arr) / sizeof(uint32_t); i++)
-    {
-        printf("%d", arr[i]);
-        printf(",");
-
-    }
-    
-    printf("\n\n\n");
-
-    return 0;
-}

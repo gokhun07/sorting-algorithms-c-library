@@ -1,9 +1,26 @@
+
+/**
+ * @file sort_insertion.c
+ * @author ihsangokhun (onel.gokhun@gmail.com)
+ * @brief it is used in order to sort a given array according to the Insertion Sort algorithm 
+ * @version 0.1
+ * @date 2021-01-10
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include "stdlib.h"
 #include "stdio.h"
 #include "stdint.h"
 
-
-int32_t sort_insertion(void *arr, uint32_t len)
+/**
+ * @brief sort the array by using the Insertion Sort algorithm 
+ * 
+ * @param arr array to be sorted
+ * @param len  the number of the element in the array 
+ */
+void sort_insertion(void *arr, uint32_t len)
 {
     int32_t *arr_ptr = (int32_t *) arr;
     int32_t iterator1 = 0;
@@ -17,49 +34,10 @@ int32_t sort_insertion(void *arr, uint32_t len)
                 if (*(arr_ptr + iterator2) < *(arr_ptr + iterator2  - 1 ))
                 {
                     temp = *(arr_ptr + iterator2 - 1);
-                    *(arr_ptr + iterator2 - 1) = *(arr_ptr + iterator2 );
+                    *(arr_ptr + iterator2 - 1) = *(arr_ptr + iterator2);
                     *(arr_ptr + iterator2) = temp;
-                }
-                else if (*(arr_ptr + iterator2) == *(arr_ptr + iterator2  - 1 ))
-                {
-                    return (*(arr_ptr + iterator2));
                 }
         }       
     }
-    return 0;
-}
+ }
 
-int main(int argc, char const *argv[])
-{
-    int32_t  arr[] = {1,2,4,-13,8,6,28,-13,-48,11,5};
-
-    for (int i = 0; i < sizeof (arr) / sizeof(uint32_t); i++)
-    {
-        printf("%d", arr[i]);
-        printf(",");
-    }
-   
-    printf("\n\n\n");
-   
-    int32_t ret = sort_insertion(arr, sizeof (arr) / sizeof(uint32_t));
-   
-    if ( (ret) != 0)
-    {
-        printf (" Equal number has been found !!!\n");
-        printf (" %d\n", ret);
-        printf("\n\n\n");
-
-        return 0;
-    }
-
-    for (int i = 0; i < sizeof (arr) / sizeof(uint32_t); i++)
-    {
-        printf("%d", arr[i]);
-        printf(",");
-
-    }
-    
-    printf("\n\n\n");
-
-    return 0;
-}
